@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Session - D&D Nexus</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-wrapper">
+        <main class="vtt-area">
+            <div class="vtt-toolbar">
+                <span id="campaign-title-display">Adventure Session</span>
+                <div class="dm-controls hidden" id="dm-tools">
+                    <button id="upload-map-btn" class="btn-mini">Change Map Layout</button>
+                    <button id="delete-campaign-btn" class="btn-danger-mini">Delete Campaign</button>
+                </div>
+            </div>
+            
+            <div id="map-canvas-container" class="map-container">
+                <div id="grid-overlay" class="grid-overlay"></div>
+                </div>
+        </main>
+
+        <aside class="sidebar-area">
+            <div class="tab-menu">
+                <button class="tab-btn active" onclick="switchTab('chat')">Game Log</button>
+                <button class="tab-btn" onclick="switchTab('npcs')">NPC Codices</button>
+            </div>
+
+            <div id="tab-chat" class="tab-content">
+                <div id="chat-stream" class="chat-display">
+                    <div class="system-msg">System: Welcome to the campaign table. Ready your dice.</div>
+                </div>
+                <div class="dice-tray">
+                    <button onclick="rollDice(20)">🎲 d20</button>
+                    <button onclick="rollDice(6)">🎲 d6</button>
+                    <button onclick="rollDice(8)">🎲 d8</button>
+                </div>
+                <div class="chat-input-row">
+                    <input type="text" id="chat-msg" placeholder="Type message or action...">
+                    <button id="send-chat-btn">Send</button>
+                </div>
+            </div>
+
+            <div id="tab-npcs" class="tab-content hidden">
+                <div class="npc-header">
+                    <h3>Monsters & Citizens</h3>
+                    <button id="add-npc-btn" class="btn-mini dm-controls hidden">+</button>
+                </div>
+                <div id="npc-list" class="npc-scroller">
+                    </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/campaign.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Builder - D&D Nexus</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="builder-container">
+        <header class="builder-header">
+            <a href="dashboard.html" class="back-link">← Back to Dashboard</a>
+            <h2>Forge Your Hero</h2>
+        </header>
+
+        <div class="sheet-card">
+            <div class="input-group">
+                <label for="char-name">Character Name</label>
+                <input type="text" id="char-name" placeholder="Enter name..." required>
+            </div>
+
+            <div class="pool-counter">
+                <span>Points Remaining:</span>
+                <strong id="points-left">27</strong> / 27
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-control-box">
+                    <span class="stat-label">STRENGTH</span>
+                    <div class="counter-row">
+                        <button type="button" class="ctrl-btn" onclick="adjustStat('str', -1)">-</button>
+                        <span id="str-score" class="score-display">8</span>
+                        <button type="button" class="ctrl-btn" onclick="adjustStat('str', 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="stat-control-box">
+                    <span class="stat-label">DEXTERITY</span>
+                    <div class="counter-row">
+                        <button type="button" class="ctrl-btn" onclick="adjustStat('dex', -1)">-</button>
+                        <span id="dex-score" class="score-display">8</span>
+                        <button type="button" class="ctrl-btn" onclick="adjustStat('dex', 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="stat-control-box">
+                    <span class="stat-label">CONSTITUTION</span>
+                    <div class="counter-row">
+                        <button type="button" class="ctrl-btn" onclick="adjustStat('con', -1)">-</button>
+                        <span id="con-score" class="score-display">8</span>
+                        <button type="button" class="ctrl-btn" onclick="adjustStat('con', 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="stat-control-box">
+                    <span class="stat-label">INTELLIGENCE</span>
+                    <div class="counter-row">
+                        <button type="button" class="ctrl-btn" onclick="adjustStat('int', -1)">-</button>
+                        <span id="int-score" class="score-display">8</span>
+                        <button type="button" class="ctrl-btn" onclick="adjustStat('int', 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="stat-control-box">
+                    <span class="stat-label">WISDOM</span>
+                    <div class="counter-row">
+                        <button type="button" class="ctrl-btn" onclick="adjustStat('wis', -1)">-</button>
+                        <span id="wis-score" class="score-display">8</span>
+                        <button type="button" class="ctrl-btn" onclick="adjustStat('wis', 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="stat-control-box">
+                    <span class="stat-label">CHARISMA</span>
+                    <div class="counter-row">
+                        <button type="button" class="ctrl-btn" onclick="adjustStat('cha', -1)">-</button>
+                        <span id="cha-score" class="score-display">8</span>
+                        <button type="button" class="ctrl-btn" onclick="adjustStat('cha', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <button id="save-char-btn" class="btn-primary full-width">Save Character Sheet</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/point-buy.js"></script>
+</body>
+</html>

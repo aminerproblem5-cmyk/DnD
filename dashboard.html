@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - D&D Nexus</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <span class="nav-logo">🎲 D&D Nexus</span>
+        <div class="nav-user">
+            <span id="user-display-name">Loading Adventurer...</span>
+            <button id="logout-btn" class="btn-secondary">Leave Party</button>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <section class="dash-section">
+            <div class="section-header">
+                <h2>My Characters</h2>
+                <a href="builder.html" class="btn-small">+ New Character</a>
+            </div>
+            <div id="characters-list" class="grid-list">
+                <p class="loading-text">Fetching your heroes...</p>
+            </div>
+        </section>
+
+        <section class="dash-section">
+            <div class="section-header">
+                <h2>My Campaigns</h2>
+                <button id="create-campaign-btn" class="btn-small">+ Create Campaign</button>
+            </div>
+            <div id="campaigns-list" class="grid-list">
+                <p class="loading-text">Loading active stories...</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="campaign-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Start a New Adventure</h3>
+            <input type="text" id="new-campaign-name" placeholder="Campaign Title (e.g., Curse of Strahd)" required>
+            <div class="modal-actions">
+                <button id="close-modal" class="btn-secondary">Cancel</button>
+                <button id="confirm-create-campaign" class="btn-primary">Launch</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
